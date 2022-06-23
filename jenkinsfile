@@ -4,7 +4,7 @@ pipeline {
 	stages{
 		stage('first stage'){
 			steps{
-				bat ' echo "Hi"'
+				sh ' echo "Hi"'
 				
 			}
 		}
