@@ -4,10 +4,7 @@ pipeline {
 	stages{
 		stage('compile stage'){
 			steps{
-				sh 
-				env | grep -e PATH -e JAVA_HOME
-				which java
-				java -version
+				sh ' echo java -version'
 				
 			}
 		}
