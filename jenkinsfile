@@ -1,20 +1,16 @@
 pipeline {
 	agent any
+	
 	stages{
 		stage('compile stage'){
 			steps{
-				withMaven(maven : 'MVN_HOME'){
-					sh 'mvn clean compile'
-				}
+				sh ...
+				env | grep -e PATH -e JAVA_HOME
+				which java
+				java -version
+				...
 			}
 		}
-		
-		stage('Deployment Stage'){
-			steps{
-				withMaven(maven : 'MVN_HOME'){
-					sh 'mvn deploy'
-				}
-			}
-		}
+	
 	}
 }
