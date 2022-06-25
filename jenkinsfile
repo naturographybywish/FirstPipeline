@@ -1,13 +1,20 @@
 pipeline {
 	agent any
 	
-	stages{
+		stages{
 		stage('first stage'){
 			steps{
-				sh ' echo "Hi"'
+				bat ' echo "Hi"'
 				
 			}
 		}
-	
+		stage('compile stage'){
+			steps{
+				withMaven(maven : 'MVN_HOME'){
+					bat 'mvn clean compile'
+				}
+			}
+		}
+		
 	}
 }
